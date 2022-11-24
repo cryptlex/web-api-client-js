@@ -1,0 +1,42 @@
+on:
+  push:
+    branches:
+      - main
+name: release-please
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      # Release Please creates a PR on main
+      - uses: google-github-actions/release-please-action@v3
+        id: release
+        with:
+          release-type: node
+          package-name: test-release-please
+      
+      # Publish to NPM
+      - uses: actions/checkout@v3
+        # If statements ensure that release is published to registries only when a new release is created.
+        if: ${{ steps.release.outputs.release_created }}
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          registry-url: 'https://registry.npmjs.org'
+        if: ${{ steps.release.outputs.release_created }}
+      - run: npm ci
+        if: ${{ steps.release.outputs.release_created }}
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+        if: ${{ steps.release.outputs.release_created }}
+      
+      # Publish to Github Packages
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          registry-url: 'https://npm.pkg.github.com'
+        if: ${{ steps.release.outputs.release_created }}
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        if: ${{ steps.release.outputs.release_created }}
