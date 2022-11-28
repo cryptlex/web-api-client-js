@@ -171,15 +171,13 @@ export class CryptlexWebApiClient {
   }
 
   /**
-   * Update the user's password. A user's password can only be updated when authenticated as the given user.
-   * @param {string} id Unique identifier for the user
-   * @param {UserPasswordUpdateRequest} passwordUpdate Password update request body
+   * Generates the reset password token (url encoded) for users with 'user' role.
+   * It should only be used for custom portals to implement password reset.
+   *
+   * @param id Unique identifier for the user
    * @returns {Promise<ApiResponse<any>>} Promise that resolves to the Web API response
    */
-  updateUserPassword(
-    id: string,
-    passwordUpdate: UserPasswordUpdateRequest
-  ): Promise<ApiResponse<any>> {
-    return UserService.updateUserPassword(this.httpClient, id, passwordUpdate);
+  generateResetPasswordToken(id: string) {
+    return UserService.generateResetPasswordToken(this.httpClient, id);
   }
 }

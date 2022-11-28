@@ -61,15 +61,23 @@ export class UserService {
     return ApiService.delete(httpClient, `${this.urlPath}/${id}`);
   }
 
-  static updateUserPassword(
-    httpClient: AxiosInstance,
-    id: string,
-    updateRequest: UserPasswordUpdateRequest
-  ): Promise<ApiResponse<any>> {
-    return ApiService.patch(
+  // Not required as of now.
+  // static updateUserPassword(
+  //   httpClient: AxiosInstance,
+  //   id: string,
+  //   updateRequest: UserPasswordUpdateRequest
+  // ): Promise<ApiResponse<any>> {
+  //   return ApiService.patch(
+  //     httpClient,
+  //     `${this.urlPath}/${id}/update-password`,
+  //     updateRequest
+  //   );
+  // }
+
+  static generateResetPasswordToken(httpClient: AxiosInstance, id: string) {
+    return ApiService.post(
       httpClient,
-      `${this.urlPath}/${id}/update-password`,
-      updateRequest
+      `${this.urlPath}/${id}/reset-password-token`
     );
   }
 }
