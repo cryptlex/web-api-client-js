@@ -28,8 +28,6 @@ export type UserResponse = {
   allowCustomerPortalAccess: boolean;
   /**  Role of the user */
   role?: string;
-  /**  */
-  roles?: string[];
   /**  Date of last login */
   lastLoginAt?: string;
   /**  Time when user was last active */
