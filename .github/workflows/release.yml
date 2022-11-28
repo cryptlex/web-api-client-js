@@ -29,14 +29,3 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
         if: ${{ steps.release.outputs.release_created }}
-
-      # Publish to Github Packages
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-          registry-url: "https://npm.pkg.github.com"
-        if: ${{ steps.release.outputs.release_created }}
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        if: ${{ steps.release.outputs.release_created }}
