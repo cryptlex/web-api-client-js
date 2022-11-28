@@ -4,10 +4,10 @@
   "description": "Client library for the Cryptlex Web API",
   "type": "module",
   "source": "src/index.ts",
-  "main": "dist/index.mjs",
+  "main": "dist/index.js",
   "types": "dist/types.d.ts",
   "engines": {
-    "node": ">= 12.12"
+    "node": ">= 14.13"
   },
   "scripts": {
     "watch": "parcel watch",
