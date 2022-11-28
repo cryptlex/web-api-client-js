@@ -1,18 +1,21 @@
 /** Schema for Metadata */
 export type MetadataResponse = {
   /** Unique identifier */
-  id: string
+  id: string;
   /** Creation date */
-  createdAt: string
+  createdAt: string;
   /** Date of last update */
-  updatedAt: string
+  updatedAt: string;
   /** Key */
-  key: string
+  key: string;
   /** Value */
-  value: string
+  value: string;
   /** Set true to access the metadata on activation. */
-  visible: boolean
-}
+  visible: boolean;
+};
 
 /** Schema for creating metadata property */
-export type MetadataRequest = Omit<MetadataResponse, 'id' | 'createdAt' | 'updatedAt'>
+export type MetadataRequest = Omit<
+  MetadataResponse,
+  "id" | "createdAt" | "updatedAt"
+>;

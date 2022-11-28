@@ -1,2 +1,2 @@
-export { CryptlexWebApiClient } from './client'
-export { CryptlexWebApiClientOptions } from './client-options'
+export { CryptlexWebApiClient } from "./client";
+export { CryptlexWebApiClientOptions } from "./client-options";

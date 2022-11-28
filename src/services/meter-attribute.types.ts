@@ -1,29 +1,38 @@
 /** Schema for Meter Attributes */
 export type MeterAttributeResponse = {
   /** Unique identifier */
-  id: string
+  id: string;
   /** Creation date */
-  createdAt: string
+  createdAt: string;
   /** Date of last update */
-  updatedAt: string
+  updatedAt: string;
   /** Name of the attribute */
-  name: string
+  name: string;
   /** Allowed uses */
-  allowedUses: number
+  allowedUses: number;
   /** Number of times the attribute has been used. */
-  totalUses: number
+  totalUses: number;
   /** Number of times the attribute has been used since the last reset */
-  grossUses: number
+  grossUses: number;
   /** Set true to make the meter attribute floating. */
-  floating: boolean
+  floating: boolean;
   /** Set true to make the meter attribute visible to the user. */
-  visible: boolean
-}
+  visible: boolean;
+};
 
 /** Schema for creating meter attribute property */
-export type MeterAttributesRequest = Omit<MeterAttributeResponse, 'id' | 'createdAt' | 'updatedAt' | 'grossUses' | 'totalUses' | 'floating' | 'visible'> & {
+export type MeterAttributesRequest = Omit<
+  MeterAttributeResponse,
+  | "id"
+  | "createdAt"
+  | "updatedAt"
+  | "grossUses"
+  | "totalUses"
+  | "floating"
+  | "visible"
+> & {
   /** Set true to make the meter attribute floating. */
-  floating?: boolean
+  floating?: boolean;
   /** Set true to make the meter attribute visible to the user. */
-  visible?: boolean
-}
+  visible?: boolean;
+};
