@@ -1,0 +1,17 @@
+# Source files, examples
+src
+examples
+
+# Linting/Formatting Configs
+.eslintrc.cjs
+.eslintignore
+.prettierignore
+.prettierrc.json
+commitlint.config.cjs
+lint-staged.config.cjs
+
+# Husky Git Hooks
+.husky
+
+# Github Workflows
+.github
