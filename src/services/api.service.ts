@@ -1,11 +1,10 @@
 import { AxiosInstance } from "axios";
-import { ApiResponse } from "./api.types";
-import { QueryParmeters, RequestBody } from "./api.types";
+import { ApiResponse, QueryParmeters, RequestBody } from "./api.types.js";
 
 /**
  * Generic functions to create requests to the Cryptlex Web API. Functions from this class are not to be used directly by the end-user.
  */
-export class ApiService {
+export default class ApiService {
   /**
    * Get paginated data from the API
    * @param {AxiosInstance} httpClient AxiosInstance

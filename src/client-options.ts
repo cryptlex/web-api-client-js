@@ -4,7 +4,7 @@ export const DEFAULT_BASE_URL = "https://api.cryptlex.com/v3";
  * Defines a set of options for the CryptlexWebApiClient.
  * @constructor
  */
-export class CryptlexWebApiClientOptions {
+export default class CryptlexWebApiClientOptions {
   /** The accessToken for accessing the Cryptlex Web API */
   accessToken: string;
 

@@ -1,2 +1,4 @@
-export { CryptlexWebApiClient } from "./client";
-export { CryptlexWebApiClientOptions } from "./client-options";
+import CryptlexWebApiClient from "./client.js";
+import CryptlexWebApiClientOptions from "./client-options.js";
+
+export { CryptlexWebApiClient, CryptlexWebApiClientOptions };

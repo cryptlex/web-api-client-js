@@ -1,13 +1,12 @@
 import { AxiosInstance } from "axios";
-import { ApiResponse } from "./api.types";
-import { ApiService } from "./api.service";
+import ApiService from "./api.service.js";
+import { ApiResponse } from "./api.types.js";
 import {
   UserResponse,
   UserListQueryParameters,
-  UserPasswordUpdateRequest,
   UserCreateRequest,
   UserUpdateRequest,
-} from "./user.types";
+} from "./user.types.js";
 
 /**
  * Function implementations for actions on Users. Not to be accessed directly by the end-user.

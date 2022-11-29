@@ -1,28 +1,28 @@
 import axios, { AxiosInstance } from "axios";
-import { CryptlexWebApiClientOptions } from "./client-options";
-import { ApiResponse } from "./services/api.types";
-import { LicenseService } from "./services/license.service";
+import CryptlexWebApiClientOptions from "./client-options.js";
+
+import { ApiResponse } from "./services/api.types.js";
+import { LicenseService } from "./services/license.service.js";
 import {
   LicenseCreateRequest,
   LicenseListQueryParameters,
   LicenseResponse,
   LicenseUpdateRequest,
-} from "./services/license.types";
-import { UserService } from "./services/user.service";
+} from "./services/license.types.js";
+import { UserService } from "./services/user.service.js";
 import {
   UserCreateRequest,
   UserListQueryParameters,
-  UserPasswordUpdateRequest,
   UserResponse,
   UserUpdateRequest,
-} from "./services/user.types";
+} from "./services/user.types.js";
 
 /**
  * The CryptlexWebApiClient class contains the functions to communicate with the Cryptlex Web API.
  * Creating instances of this class require passing a CryptlexWebApiClientOptions instance.
  *
  */
-export class CryptlexWebApiClient {
+export default class CryptlexWebApiClient {
   /**
    * HttpClient to communicate with the Cryptlex Web API
    */
@@ -174,7 +174,7 @@ export class CryptlexWebApiClient {
    * Generates the reset password token (url encoded) for users with 'user' role.
    * It should only be used for custom portals to implement password reset.
    *
-   * @param id Unique identifier for the user
+   * @param {string} id Unique identifier for the user
    * @returns {Promise<ApiResponse<any>>} Promise that resolves to the Web API response
    */
   generateResetPasswordToken(id: string) {

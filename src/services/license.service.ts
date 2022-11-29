@@ -3,10 +3,10 @@ import {
   LicenseCreateRequest,
   LicenseListQueryParameters,
   LicenseUpdateRequest,
-} from "./license.types";
-import { ApiResponse } from "./api.types";
+} from "./license.types.js";
+import { ApiResponse } from "./api.types.js";
 import { AxiosInstance } from "axios";
-import { ApiService } from "./api.service";
+import ApiService from "./api.service.js";
 
 /**
  * Function implementations for actions on Licenses. Not to be accessed directly by the end-user.

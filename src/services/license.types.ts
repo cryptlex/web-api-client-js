@@ -1,9 +1,9 @@
-import { MetadataResponse, MetadataRequest } from "./metadata.types";
+import { MetadataResponse, MetadataRequest } from "./metadata.types.js";
 import {
   MeterAttributeResponse,
   MeterAttributesRequest,
-} from "./meter-attribute.types";
-import { UserResponse } from "./user.types";
+} from "./meter-attribute.types.js";
+import { UserResponse } from "./user.types.js";
 
 /**
  * String literals defining license.fingerprintMatchingStrategy
@@ -117,7 +117,7 @@ export type LicenseResponse = {
    */
   maxAllowedReleaseVersion?: string;
   /** List of tags. <= 5 items */
-  tags: string[];
+  tags?: string[];
 
   /**
    * List of metdata key / value pairs.
@@ -181,7 +181,10 @@ type LicenseReadOnlyProperties =
 export type LicenseCreateRequest = Omit<
   LicenseResponse,
   LicenseReadOnlyProperties | "metadata" | "meterAttributes"
-> & { meterAttributes: MeterAttributesRequest[]; metadata: MetadataRequest[] };
+> & {
+  meterAttributes?: MeterAttributesRequest[];
+  metadata?: MetadataRequest[];
+};
 
 /**
  * Request object schema for updating license.
@@ -198,7 +201,10 @@ export type LicenseUpdateRequest = Omit<
   | "validity"
   | "metadata"
   | "meterAttributes"
-> & { meterAttributes: MeterAttributesRequest[]; metadata: MetadataRequest[] };
+> & {
+  meterAttributes?: MeterAttributesRequest[];
+  metadata?: MetadataRequest[];
+};
 
 /**
  * Supported query parameters for listing licenses

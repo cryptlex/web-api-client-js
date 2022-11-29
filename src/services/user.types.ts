@@ -1,4 +1,4 @@
-import { MetadataResponse, MetadataRequest } from "./metadata.types";
+import { MetadataResponse, MetadataRequest } from "./metadata.types.js";
 
 /**
  * Schema for User
@@ -25,9 +25,9 @@ export type UserResponse = {
   /**  True if Google SSO is enabled for this user */
   googleSsoEnabled: boolean;
   /**  True is user is allowed access to the Customer Portal */
-  allowCustomerPortalAccess: boolean;
+  allowCustomerPortalAccess?: boolean;
   /**  Role of the user */
-  role?: string;
+  role: string;
   /**  Date of last login */
   lastLoginAt?: string;
   /**  Time when user was last active */
@@ -56,7 +56,7 @@ export type UserCreateRequest = Omit<
 > & {
   /** Password of the user */
   password: string;
-  metadata: MetadataRequest[];
+  metadata?: MetadataRequest[];
 };
 
 export type UserUpdateRequest = Omit<UserCreateRequest, "password">;
