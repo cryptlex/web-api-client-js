@@ -49,4 +49,4 @@ try {
 
 # Functions
 
-The extent of this library can be seen in the [complete list of functions](docs/functions.md) available.
+The extent of this library can be seen in the [complete list of functions](https://github.com/cryptlex/web-api-client-js/blob/main/docs/functions.md) available.
