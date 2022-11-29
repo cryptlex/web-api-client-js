@@ -27,18 +27,12 @@ import {
 const ACCESS_TOKEN = "**ACCESS_TOKEN**";
 const PRODUCT_ID = "**PRODUCT_ID**";
 
-const cryptlexWebApiClientOptions = new CryptlexWebApiClientOptions(
-  ACCESS_TOKEN
-);
-const cryptlexWebApiClient = new CryptlexWebApiClient(
-  cryptlexWebApiClientOptions
-);
+const clientOptions = new CryptlexWebApiClientOptions(ACCESS_TOKEN);
+const client = new CryptlexWebApiClient(clientOptions);
 
 try {
   // Create a license in the product defined by PRODUCT_ID
-  const licenseResponse = await cryptlexWebApiClient.createLicense({
-    productId: PRODUCT_ID,
-  });
+  const licenseResponse = await client.createLicense({ productId: PRODUCT_ID });
   console.log(
     "\nSuccessfully created license: " + JSON.stringify(licenseResponse.data)
   );
