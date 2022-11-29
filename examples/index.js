@@ -2,6 +2,7 @@ import {
   CryptlexWebApiClient,
   CryptlexWebApiClientOptions,
 } from "@cryptlex/web-api-client";
+import { nanoid } from "nanoid";
 
 const ACCESS_TOKEN = "**ACCESS_TOKEN**";
 const PRODUCT_ID = "**PRODUCT_ID**";
@@ -13,7 +14,7 @@ const cryptlexWebApiClient = new CryptlexWebApiClient(
   cryptlexWebApiClientOptions
 );
 
-await main();
+main();
 
 /**
  * This function creates a User and then subsequently creates a license linked to that user.
@@ -21,10 +22,10 @@ await main();
 async function main() {
   try {
     const userResponse = await cryptlexWebApiClient.createUser({
-      email: "doedoe@doedoedoe.com",
-      firstName: "Doe Doe",
+      email: "john@doe.com",
+      firstName: "John",
       lastName: "Doe",
-      password: "secret_password_100",
+      password: nanoid(),
       role: "user",
     });
     console.log(
