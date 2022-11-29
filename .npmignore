@@ -9,6 +9,7 @@ examples
 .prettierrc.json
 commitlint.config.cjs
 lint-staged.config.cjs
+tsconfig.json
 
 # Husky Git Hooks
 .husky

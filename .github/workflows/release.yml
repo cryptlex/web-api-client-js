@@ -28,6 +28,12 @@ jobs:
         run: | 
           npm ci
           npm run build
+
+      # - name: Generate docs
+      #   if: ${{ steps.release.outputs.release_created }}
+      #   run: | 
+      #     npm run generate-docs
+
       - name: NPM Publish
         if: ${{ steps.release.outputs.release_created }}
         run: npm publish --access public

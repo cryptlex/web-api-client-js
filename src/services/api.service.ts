@@ -2,11 +2,15 @@ import { AxiosInstance } from "axios";
 import { ApiResponse, QueryParmeters, RequestBody } from "./api.types.js";
 
 /**
+ * @internal
+ * @private
  * Generic functions to create requests to the Cryptlex Web API. Functions from this class are not to be used directly by the end-user.
  */
 export default class ApiService {
   /**
    * Get paginated data from the API
+   * @internal
+   * @private
    * @param {AxiosInstance} httpClient AxiosInstance
    * @param {string} urlPath Relative path from baseUrl to the entity
    * @param {number} page Page number
@@ -34,6 +38,8 @@ export default class ApiService {
 
   /**
    * Make a GET request to the Web API
+   * @internal
+   * @private
    * @param {AxiosInstance} httpClient AxiosInstance
    * @param {string} urlPath Relative path from baseUrl to the entity
    * @returns {Promise<ApiResponse<T>>} Promise that resolves to ApiResponse
@@ -47,6 +53,8 @@ export default class ApiService {
 
   /**
    * Make a POST request to the Web API
+   * @internal
+   * @private
    * @param {AxiosInstance} httpClient AxiosInstance
    * @param {string} urlPath Relative path from baseUrl to the entity
    * @param {RequestBody} body Request body
@@ -62,6 +70,8 @@ export default class ApiService {
 
   /**
    * Make a PATCH request to the Web API
+   * @internal
+   * @private
    * @param {AxiosInstance} httpClient AxiosInstance
    * @param {string} urlPath Relative path from baseUrl to the entity
    * @param {RequestBody} body Request body
@@ -77,6 +87,8 @@ export default class ApiService {
 
   /**
    * Make a DELETE request to the Web API
+   * @internal
+   * @private
    * @param {AxiosInstance} httpClient AxiosInstance
    * @param {string} urlPath Relative path from baseUrl to the entity
    * @returns {Promise<ApiResponse<T>>} Promise that resolves to ApiResponse

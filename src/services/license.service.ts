@@ -9,6 +9,8 @@ import { AxiosInstance } from "axios";
 import ApiService from "./api.service.js";
 
 /**
+ * @internal
+ * @private
  * Function implementations for actions on Licenses. Not to be accessed directly by the end-user.
  */
 export class LicenseService {
