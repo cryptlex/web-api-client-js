@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/cryptlex/web-api-client-js/compare/v1.1.0...v1.1.1) (2022-11-29)
+
+
+### Bug Fixes
+
+* ignore tsconfig in npm ([#12](https://github.com/cryptlex/web-api-client-js/issues/12)) ([fbc6f58](https://github.com/cryptlex/web-api-client-js/commit/fbc6f5811d2a3ebad47f8f68ffb3a3c4abe904df))
+
 ## [1.1.0](https://github.com/cryptlex/web-api-client-js/compare/v1.0.0...v1.1.0) (2022-11-29)
 
 
