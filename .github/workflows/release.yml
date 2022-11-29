@@ -12,21 +12,25 @@ jobs:
         id: release
         with:
           release-type: node
-          package-name: test-release-please
+          package-name: '@cryptlex/web-api-client'
 
       # Publish to NPM
+      # If statements ensure that release is published to registries only when a new release is created.
       - uses: actions/checkout@v3
-        # If statements ensure that release is published to registries only when a new release is created.
         if: ${{ steps.release.outputs.release_created }}
       - uses: actions/setup-node@v3
+        if: ${{ steps.release.outputs.release_created }}
         with:
           node-version: 16
           registry-url: "https://registry.npmjs.org"
+      - name: Build library
         if: ${{ steps.release.outputs.release_created }}
-      - run: npm ci
-      - run: npm run build
+        run: | 
+          npm ci
+          npm run build
+      - name: NPM Publish
         if: ${{ steps.release.outputs.release_created }}
-      - run: npm publish
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-        if: ${{ steps.release.outputs.release_created }}
+        
