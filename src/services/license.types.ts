@@ -222,76 +222,76 @@ export type LicenseListQueryParameters = {
   /** Unique identifier for the reseller.  */
   "resellerId"?: string;
 
-  /** Matches values that are equal to a specified value. */
+  /** Matches an email address that is equal to the specified value. */
   "user.email[eq]"?: string;
 
-  /** Matches values that are not equal to a specified value. */
+  /** Matches an email address that is not equal to the specified value. */
   "user.email[ne]"?: string;
 
-  /** Matches values that start with a specified value. */
+  /** Matches an email address  start with the specified value. */
   "user.email[sw]"?: string;
 
-  /**  Matches values that end with a specified value. */
+  /**  Matches an email address  end with the specified value. */
   "user.email[ew]"?: string;
 
-  /** Matches values that contain a specified value. */
+  /** Matches an email address contain the specified value. */
   "user.email[cn]"?: string;
 
-  /** Matches values that does not contain a specified value. */
+  /** Matches an email address does not contain the specified value. */
   "user.email[nc]"?: string;
 
-  /** Matches any of the values specified in an array. */
+  /** Matches any of the user emails specified in an array. */
   "user.email[in]"?: string[];
 
-  /** Matches none of the values specified in an array. */
+  /** Matches none of the user emails specified in an array. */
   "user.email[nin]"?: string[];
 
-  /** Matches values that are equal to a specified value. */
+  /** Matches the users whose company name are equal to the specified value. */
   "user.company[eq]"?: string;
 
-  /** Matches values that are not equal to a specified value. */
+  /** Matches the users whose company name are not equal to the specified value. */
   "user.company[ne]"?: string;
 
-  /** Matches values that start with a specified value. */
+  /** Matches the users whose company name start with the specified value. */
   "user.company[sw]"?: string;
 
-  /** Matches values that end with a specified value. */
+  /** Matches the users whose company name end with the specified value. */
   "user.company[ew]"?: string;
 
-  /** Matches values that contain a specified value. */
+  /** Matches the users whose company name contain the specified value. */
   "user.company[cn]"?: string;
 
-  /** Matches values that does not contain a specified value. */
+  /** Matches the users whose company name does not contain the specified value. */
   "user.company[nc]"?: string;
 
-  /** Matches any of the values specified in an array. */
+  /** Matches any of the user company names specified in an array. */
   "user.company[in]"?: string[];
 
-  /* Matches none of the values specified in an array. */
+  /* Matches none of the user company names specified in an array. */
   "user.company[nin]"?: string[];
 
-  /** Matches values that are equal to a specified value. */
+  /** Matches license key(s) are equal to the specified value. */
   "key[eq]"?: string;
 
-  /** Matches values that are not equal to a specified value. */
+  /** Matches license key(s) are not equal to the specified value. */
   "key[ne]"?: string;
 
-  /** Matches values that start with a specified value. */
+  /** Matches license key(s) start with the specified value. */
   "key[sw]"?: string;
 
-  /** Matches values that end with a specified value. */
+  /** Matches license key(s) end with the specified value. */
   "key[ew]"?: string;
 
-  /** Matches values that contain a specified value. */
+  /** Matches license key(s) contain the specified value. */
   "key[cn]"?: string;
 
-  /** Matches values that does not contain a specified value. */
+  /** Matches license key(s) does not contain the specified value. */
   "key[nc]"?: string;
 
-  /* Matches any of the values specified in an array. */
+  /* Matches any of the license keys specified in an array. */
   "key[in]"?: string[];
 
-  /*     Matches none of the values specified in an array. */
+  /*     Matches none of the license keys specified in an array. */
   "key[nin]"?: string[];
 
   /** Whether a license is revoked. */
@@ -303,94 +303,94 @@ export type LicenseListQueryParameters = {
   /** License type */
   "type"?: LicenseType;
 
-  /** Matches values that are equal to a specified value. */
+  /** Matches validity (in seconds) are equal to the specified value. */
   "validity[eq]"?: number;
 
-  /** Matches values that are not equal to a specified value. */
+  /** Matches validity(in seconds) that is not equal to the specified value. */
   "validity[ne]"?: number;
 
-  /** Matches values that are greater than a specified value. */
+  /** Matches validity(in seconds) that is greater than the specified value. */
   "validity[gt]"?: number;
 
-  /** Matches values that are greater than or equal to a specified value. */
+  /** Matches validity(in seconds) that is greater than or equal to the specified value. */
   "validity[gte]"?: number;
 
-  /** Matches values that are less than a specified value. */
+  /** Matches validity(in seconds) that is less than the specified value. */
   "validity[lt]"?: number;
 
-  /** Matches values that are less than or equal to a specified value. */
+  /** Matches validity(in seconds) that is less than or equal to the specified value. */
   "validity[lte]"?: number;
 
-  /** Matches values that are equal to a specified value. */
+  /** Matches Allowed Activations that are equal to the specified value. */
   "allowedActivations[eq]"?: number;
 
-  /** Matches values that are not equal to a specified value. */
+  /** Matches Allowed Activations that are not equal to the specified value. */
   "allowedActivations[ne]"?: number;
 
-  /** Matches values that are greater than a specified value. */
+  /** Matches Allowed Activations that are greater than the specified value. */
   "allowedActivations[gt]"?: number;
 
-  /** Matches values that are greater than or equal to a specified value. */
+  /** Matches Allowed Activations that are greater than or equal to the specified value. */
   "allowedActivations[gte]"?: number;
 
-  /** Matches values that are less than a specified value. */
+  /** Matches Allowed Activations that are less than the specified value. */
   "allowedActivations[lt]"?: number;
 
-  /** Matches values that are less than or equal to a specified value. */
+  /** Matches Allowed Activations that are less than or equal to the specified value. */
   "allowedActivations[lte]"?: number;
 
-  /** Matches values that are equal to a specified value. */
+  /** Matches Allowed Deactivations that are equal to the specified value. */
   "allowedDeactivations[eq]"?: number;
 
-  /** Matches values that are not equal to a specified value. */
+  /** Matches Allowed Deactivations that are not equal to the specified value. */
   "allowedDeactivations[ne]"?: number;
 
-  /** Matches values that are greater than a specified value. */
+  /** Matches Allowed Deactivations that are greater than the specified value. */
   "allowedDeactivations[gt]"?: number;
 
-  /** Matches values that are greater than or equal to a specified value. */
+  /** Matches Allowed Deactivations that are greater than or equal to the specified value. */
   "allowedDeactivations[gte]"?: number;
 
-  /** Matches values that are less than a specified value. */
+  /** Matches Allowed Deactivations that are less than the specified value. */
   "allowedDeactivations[lt]"?: number;
 
-  /** Matches values that are less than or equal to a specified value. */
+  /** Matches Allowed Deactivations that are less than or equal to the specified value. */
   "allowedDeactivations[lte]"?: number;
 
-  /** Matches values that are equal to a specified value. */
+  /** Matches Total Activations that are equal to the specified value. */
   "totalActivations[eq]"?: number;
 
-  /** Matches values that are not equal to a specified value. */
+  /** Matches Total Activations that are not equal to the specified value. */
   "totalActivations[ne]"?: number;
 
-  /** Matches values that are greater than a specified value. */
+  /** Matches Total Activations that are greater than the specified value. */
   "totalActivations[gt]"?: number;
 
-  /** Matches values that are greater than or equal to a specified value. */
+  /** Matches Total Activations that are greater than or equal to the specified value. */
   "totalActivations[gte]"?: number;
 
-  /** Matches values that are less than a specified value. */
+  /** Matches Total Activations that are less than the specified value. */
   "totalActivations[lt]"?: number;
 
-  /** Matches values that are less than or equal to a specified value. */
+  /** Matches Total Activations that are less than or equal to the specified value. */
   "totalActivations[lte]"?: number;
 
-  /** Matches values that are equal to a specified value. */
+  /** Matches Total Deactivations that are equal to the specified value. */
   "totalDeactivations[eq]"?: number;
 
-  /** Matches values that are not equal to a specified value. */
+  /** Matches Total Deactivations that are not equal to the specified value. */
   "totalDeactivations[ne]"?: number;
 
-  /** Matches values that are greater than a specified value. */
+  /** Matches Total Deactivations that are greater than the specified value. */
   "totalDeactivations[gt]"?: number;
 
-  /** Matches values that are greater than or equal to a specified value. */
+  /** Matches Total Deactivations that are greater than or equal to the specified value. */
   "totalDeactivations[gte]"?: number;
 
-  /** Matches values that are less than a specified value. */
+  /** Matches Total Deactivations that are less than the specified value. */
   "totalDeactivations[lt]"?: number;
 
-  /** Matches values that are less than or equal to a specified value. */
+  /** Matches Total Deactivations that are less than or equal to the specified value. */
   "totalDeactivations[lte]"?: number;
 
   /* Whether activation is allowed inside a virtual machine. */
@@ -405,93 +405,93 @@ export type LicenseListQueryParameters = {
   /* Expiration strategy of the license. */
   "expirationStrategy"?: ExpirationStrategy;
 
-  /** Matches licenses creation dates that are equal to a specified value. */
+  /** Matches the creation date that is equal to the specified value. */
   "createdAt[eq]"?: string;
 
-  /** Matches values that are not equal to a specified value. */
+  /** Matches the creation date that is not equal to the specified value. */
   "createdAt[ne]"?: string;
 
-  /** Matches values that are greater than a specified value. */
+  /** Matches the creation date that is greater than the specified value. */
   "createdAt[gt]"?: string;
 
-  /** Matches values that are greater than or equal to a specified value. */
+  /** Matches the creation date that is greater than or equal to the specified value. */
   "createdAt[gte]"?: string;
 
-  /** Matches values that are less than a specified value. */
+  /** Matches the creation date that is less than the specified value. */
   "createdAt[lt]"?: string;
 
-  /** Matches values that are less than or equal to a specified value. */
+  /** Matches the creation date that is less than or equal to the specified value. */
   "createdAt[lte]"?: string;
 
-  /** Matches licenses with tags that are equal to a specified value. */
+  /** Matches a tag name that is equal to the specified value. */
   "tag[eq]"?: string;
 
-  /** Matches values that are not equal to a specified value. */
+  /** Matches a tag name that is not equal to the specified value. */
   "tag[ne]"?: string;
 
-  /** Matches values that start with a specified value. */
+  /** Matches a tag name that start with the specified value. */
   "tag[sw]"?: string;
 
-  /** Matches values that end with a specified value. */
+  /** Matches a tag name that end with the specified value. */
   "tag[ew]"?: string;
 
-  /** Matches values that contain a specified value. */
+  /** Matches a tag name that contain the specified value. */
   "tag[cn]"?: string;
 
-  /** Matches values that does not contain a specified value. */
+  /** Matches a tag name that does not contain the specified value. */
   "tag[nc]"?: string;
 
-  /* Matches any of the values specified in an array. */
+  /* Matches any of the tag names specified in an array. */
   "tag[in]"?: string[];
 
-  /* Matches none of the values specified in an array. */
+  /* Matches none of the tag names specified in an array. */
   "tag[nin]"?: string[];
 
-  /** Matches values that are equal to a specified value. */
+  /** Matches a metadata key that is equal to the specified value. */
   "metadata.key[eq]"?: string;
 
-  /** Matches values that are not equal to a specified value. */
+  /** Matches a metadata key that is not equal to the specified value. */
   "metadata.key[ne]"?: string;
 
-  /** Matches values that start with a specified value. */
+  /** Matches a metadata key that start with the specified value. */
   "metadata.key[sw]"?: string;
 
-  /** Matches values that end with a specified value. */
+  /** Matches a metadata key that end with the specified value. */
   "metadata.key[ew]"?: string;
 
-  /** Matches values that contain a specified value. */
+  /** Matches a metadata key that contain the specified value. */
   "metadata.key[cn]"?: string;
 
-  /** Matches values that does not contain a specified value. */
+  /** Matches a metadata key that does not contain the specified value. */
   "metadata.key[nc]"?: string;
 
-  /* Matches any of the values specified in an array. */
+  /* Matches any of the metadata keys specified in an array. */
   "metadata.key[in]"?: string[];
 
-  /* Matches none of the values specified in an array. */
+  /* Matches none of the metadata keys specified in an array. */
   "metadata.key[nin]"?: string[];
 
-  /** Matches values that are equal to a specified value. */
+  /** Matches a metadata value that is equal to the specified value. */
   "metadata.value[eq]"?: string;
 
-  /** Matches values that are not equal to a specified value. */
+  /** Matches a metadata value that is not equal to the specified value. */
   "metadata.value[ne]"?: string;
 
-  /** Matches values that start with a specified value. */
+  /** Matches a metadata value that start with the specified value. */
   "metadata.value[sw]"?: string;
 
-  /** Matches values that end with a specified value. */
+  /** Matches a metadata value that end with the specified value. */
   "metadata.value[ew]"?: string;
 
-  /** Matches values that contain a specified value. */
+  /** Matches a metadata value that contain the specified value. */
   "metadata.value[cn]"?: string;
 
-  /** Matches values that does not contain a specified value. */
+  /** Matches a metadata value that does not contain the specified value. */
   "metadata.value[nc]"?: string;
 
-  /** Matches any of the values specified in an array. */
+  /** Matches any of the metadata values specified in an array. */
   "metadata.value[in]"?: string[];
 
-  /** Matches none of the values specified in an array. */
+  /** Matches none of the metadata values specified in an array. */
   "metadata.value[nin]"?: string[];
 };
