@@ -9,6 +9,8 @@ import {
 } from "./user.types.js";
 
 /**
+ * @internal
+ * @private
  * Function implementations for actions on Users. Not to be accessed directly by the end-user.
  */
 export class UserService {
