@@ -5,13 +5,13 @@
   "type": "module",
   "source": "src/index.ts",
   "main": "dist/index.js",
-  "types": "dist/types.d.ts",
+  "types": "dist/index.d.ts",
   "engines": {
     "node": ">= 14.13"
   },
   "scripts": {
-    "watch": "parcel watch",
-    "build": "parcel build",
+    "build": "tsc",
+    "dev": "tsc --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --fix . && prettier --write .",
     "prepare": "husky install"
@@ -44,7 +44,6 @@
     "eslint-plugin-promise": "6.1.1",
     "husky": "8.0.2",
     "lint-staged": "13.0.4",
-    "parcel": "2.8.0",
     "prettier": "2.8.0",
     "typescript": "4.9.3"
   },
