@@ -33,9 +33,7 @@ const client = new CryptlexWebApiClient(clientOptions);
 try {
   // Create a license in the product defined by PRODUCT_ID
   const licenseResponse = await client.createLicense({ productId: PRODUCT_ID });
-  console.log(
-    "\nSuccessfully created license: " + JSON.stringify(licenseResponse.data)
-  );
+  console.log("\nSuccessfully created license: " + JSON.stringify(licenseResponse.data));
 } catch (error) {
   console.error(error);
 }
