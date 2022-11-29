@@ -28,6 +28,5 @@ jspm_packages/
 # Optional eslint cache
 .eslintcache
 
-# parcel-bundler cache (https://parceljs.org/)
-.parcel-cache
-.cache
+# Build files
+dist
