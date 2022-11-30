@@ -195,7 +195,6 @@ export type LicenseUpdateRequest = Omit<
   LicenseResponse,
   | LicenseReadOnlyProperties
   | "productId"
-  | "key"
   | "licensePolicyId"
   | "createdAt"
   | "validity"
