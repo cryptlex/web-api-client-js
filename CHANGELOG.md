@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.2](https://github.com/cryptlex/web-api-client-js/compare/v1.1.1...v1.1.2) (2022-11-30)
+
+
+### Bug Fixes
+
+* license update type ([8c5a6ac](https://github.com/cryptlex/web-api-client-js/commit/8c5a6ace082370b78563fb41c485505025cf8b14))
+
 ## [1.1.1](https://github.com/cryptlex/web-api-client-js/compare/v1.1.0...v1.1.1) (2022-11-29)
 
 
