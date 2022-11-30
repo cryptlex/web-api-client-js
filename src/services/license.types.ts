@@ -203,7 +203,6 @@ export type LicenseUpdateRequest = Omit<
   | "userLocked"
   | "expirationStrategy"
   | "type"
-  | "createdAt"
 > & {
   meterAttributes?: MeterAttributesRequest[];
   metadata?: MetadataRequest[];
