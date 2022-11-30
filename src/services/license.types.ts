@@ -194,13 +194,16 @@ export type LicenseCreateRequest = Omit<
 export type LicenseUpdateRequest = Omit<
   LicenseResponse,
   | LicenseReadOnlyProperties
-  | "key"
+  | "productId"
   | "licensePolicyId"
   | "createdAt"
-  | "type"
   | "validity"
   | "metadata"
   | "meterAttributes"
+  | "userLocked"
+  | "expirationStrategy"
+  | "type"
+  | "createdAt"
 > & {
   meterAttributes?: MeterAttributesRequest[];
   metadata?: MetadataRequest[];
