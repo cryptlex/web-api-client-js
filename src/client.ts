@@ -1,5 +1,6 @@
-import axios, { AxiosInstance } from "axios";
+import { AxiosInstance } from "axios";
 import CryptlexWebApiClientOptions from "./client-options.js";
+import { HttpClient } from "./http-client.js";
 
 import { ApiResponse } from "./services/api.types.js";
 import { LicenseService } from "./services/license.service.js";
@@ -29,13 +30,7 @@ export default class CryptlexWebApiClient {
   httpClient: AxiosInstance;
 
   constructor(options: CryptlexWebApiClientOptions) {
-    this.httpClient = axios.create({
-      baseURL: options.baseUrl,
-      timeout: options.timeout,
-      headers: {
-        Authorization: `Bearer ${options.accessToken}`,
-      },
-    });
+    this.httpClient = new HttpClient(options).instance;
   }
 
   /**
@@ -47,6 +42,23 @@ export default class CryptlexWebApiClient {
     license: LicenseCreateRequest
   ): Promise<ApiResponse<LicenseResponse>> {
     return LicenseService.createLicense(this.httpClient, license);
+  }
+
+  /**
+   *
+   * @param {LicenseCreateRequest} license License object to create
+   * @param {number} count Number of licenses to create
+   * @returns {Promise<ApiResponse<LicenseResponse>[]>} Promise that resolves to an array of Web API responses.
+   */
+  createLicenses(
+    license: LicenseCreateRequest,
+    count: number
+  ): Promise<ApiResponse<LicenseResponse>[]> {
+    return Promise.all(
+      Array.from({ length: count }, () => {
+        return LicenseService.createLicense(this.httpClient, license);
+      })
+    );
   }
 
   /**
