@@ -1,5 +1,6 @@
-import axios, { AxiosInstance } from "axios";
+import { AxiosInstance } from "axios";
 import CryptlexWebApiClientOptions from "./client-options.js";
+import { HttpClient } from "./http-client.js";
 
 import { ApiResponse } from "./services/api.types.js";
 import { LicenseService } from "./services/license.service.js";
@@ -26,16 +27,10 @@ export default class CryptlexWebApiClient {
   /**
    * HttpClient to communicate with the Cryptlex Web API
    */
-  httpClient: AxiosInstance;
+  httpClientInstance: AxiosInstance;
 
   constructor(options: CryptlexWebApiClientOptions) {
-    this.httpClient = axios.create({
-      baseURL: options.baseUrl,
-      timeout: options.timeout,
-      headers: {
-        Authorization: `Bearer ${options.accessToken}`,
-      },
-    });
+    this.httpClientInstance = new HttpClient(options).instance;
   }
 
   /**
@@ -46,7 +41,24 @@ export default class CryptlexWebApiClient {
   createLicense(
     license: LicenseCreateRequest
   ): Promise<ApiResponse<LicenseResponse>> {
-    return LicenseService.createLicense(this.httpClient, license);
+    return LicenseService.createLicense(this.httpClientInstance, license);
+  }
+
+  /**
+   * Create multiple licenses
+   * @param {LicenseCreateRequest} license License object to create
+   * @param {number} count Number of licenses to create
+   * @returns {Promise<ApiResponse<LicenseResponse>[]>} Promise that resolves to an array of Web API responses.
+   */
+  createLicenses(
+    license: LicenseCreateRequest,
+    count: number
+  ): Promise<ApiResponse<LicenseResponse>[]> {
+    return Promise.all(
+      Array.from({ length: count }, () => {
+        return LicenseService.createLicense(this.httpClientInstance, license);
+      })
+    );
   }
 
   /**
@@ -60,7 +72,7 @@ export default class CryptlexWebApiClient {
     id: string,
     license: LicenseUpdateRequest
   ): Promise<ApiResponse<LicenseResponse>> {
-    return LicenseService.updateLicense(this.httpClient, id, license);
+    return LicenseService.updateLicense(this.httpClientInstance, id, license);
   }
 
   /**
@@ -69,7 +81,7 @@ export default class CryptlexWebApiClient {
    * @returns {Promise<ApiResponse<LicenseResponse>>} Promise that resolves to the Web API response
    */
   deleteLicense(id: string): Promise<ApiResponse<any>> {
-    return LicenseService.deleteLicense(this.httpClient, id);
+    return LicenseService.deleteLicense(this.httpClientInstance, id);
   }
 
   /**
@@ -84,7 +96,12 @@ export default class CryptlexWebApiClient {
     limit: number,
     parameters?: LicenseListQueryParameters
   ) {
-    return LicenseService.getLicenses(this.httpClient, page, limit, parameters);
+    return LicenseService.getLicenses(
+      this.httpClientInstance,
+      page,
+      limit,
+      parameters
+    );
   }
 
   /**
@@ -93,7 +110,7 @@ export default class CryptlexWebApiClient {
    * @returns {Promise<ApiResponse<LicenseResponse>>} Promise that resolves to the Web API response
    */
   getLicense(id: string): Promise<ApiResponse<LicenseResponse>> {
-    return LicenseService.getLicense(this.httpClient, id);
+    return LicenseService.getLicense(this.httpClientInstance, id);
   }
 
   /**
@@ -102,7 +119,7 @@ export default class CryptlexWebApiClient {
    * @returns {Promise<ApiResponse<LicenseResponse>>} Promise that resolves to the Web API response
    */
   renewLicense(id: string): Promise<ApiResponse<LicenseResponse>> {
-    return LicenseService.renewLicense(this.httpClient, id);
+    return LicenseService.renewLicense(this.httpClientInstance, id);
   }
 
   /**
@@ -115,7 +132,11 @@ export default class CryptlexWebApiClient {
     id: string,
     extensionLength: number
   ): Promise<ApiResponse<LicenseResponse>> {
-    return LicenseService.extendLicense(this.httpClient, id, extensionLength);
+    return LicenseService.extendLicense(
+      this.httpClientInstance,
+      id,
+      extensionLength
+    );
   }
 
   /**
@@ -124,7 +145,7 @@ export default class CryptlexWebApiClient {
    * @returns {Promise<ApiResponse<UserResponse>>} Promise that resolves to the Web API response
    */
   createUser(user: UserCreateRequest): Promise<ApiResponse<UserResponse>> {
-    return UserService.createUser(this.httpClient, user);
+    return UserService.createUser(this.httpClientInstance, user);
   }
 
   /**
@@ -133,7 +154,7 @@ export default class CryptlexWebApiClient {
    * @returns {Promise<ApiResponse<any>>} Promise that resolves to the Web API response
    */
   deleteUser(id: string): Promise<ApiResponse<any>> {
-    return UserService.deleteUser(this.httpClient, id);
+    return UserService.deleteUser(this.httpClientInstance, id);
   }
 
   /**
@@ -142,7 +163,7 @@ export default class CryptlexWebApiClient {
    * @returns {Promise<ApiResponse<UserResponse>>} Promise that resolves to the Web API response
    */
   getUser(id: string): Promise<ApiResponse<UserResponse>> {
-    return UserService.getUser(this.httpClient, id);
+    return UserService.getUser(this.httpClientInstance, id);
   }
 
   /**
@@ -157,7 +178,12 @@ export default class CryptlexWebApiClient {
     limit: number,
     parameters?: UserListQueryParameters
   ): Promise<ApiResponse<UserResponse[]>> {
-    return UserService.getUsers(this.httpClient, page, limit, parameters);
+    return UserService.getUsers(
+      this.httpClientInstance,
+      page,
+      limit,
+      parameters
+    );
   }
 
   /**
@@ -167,7 +193,7 @@ export default class CryptlexWebApiClient {
    * @returns {Promise<ApiResponse<UserResponse>>} Promise that resolves to the Web API response
    */
   updateUser(id: string, user: UserUpdateRequest) {
-    return UserService.updateUser(this.httpClient, id, user);
+    return UserService.updateUser(this.httpClientInstance, id, user);
   }
 
   /**
@@ -178,6 +204,6 @@ export default class CryptlexWebApiClient {
    * @returns {Promise<ApiResponse<any>>} Promise that resolves to the Web API response
    */
   generateResetPasswordToken(id: string) {
-    return UserService.generateResetPasswordToken(this.httpClient, id);
+    return UserService.generateResetPasswordToken(this.httpClientInstance, id);
   }
 }
