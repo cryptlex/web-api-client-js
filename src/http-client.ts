@@ -1,5 +1,5 @@
 import axios, { AxiosError, AxiosInstance, AxiosRequestConfig } from "axios";
-import CryptlexWebApiClientOptions from "./client-options";
+import CryptlexWebApiClientOptions from "./client-options.js";
 
 /** An extension of AxiosRequestConfig to store   */
 type AxiosRetryConfig = AxiosRequestConfig<any> & {
