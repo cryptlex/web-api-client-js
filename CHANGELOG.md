@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.2.0](https://github.com/cryptlex/web-api-client-js/compare/v1.1.2...v1.2.0) (2022-12-12)
+
+
+### Features
+
+* **CryptlexWebApiClient:** add `getLicenses(license, count)` ([e7d7846](https://github.com/cryptlex/web-api-client-js/commit/e7d7846c88c1775b5ca1e561fa6d4cad12c1d676))
+* **http:** enable retrying for 429 and 5xx requests ([e7d7846](https://github.com/cryptlex/web-api-client-js/commit/e7d7846c88c1775b5ca1e561fa6d4cad12c1d676))
+
+
+### Bug Fixes
+
+* **httpClient:** import extension ([752f2a1](https://github.com/cryptlex/web-api-client-js/commit/752f2a1f39fdd2d1f59937019cd6247d798cc70a))
+
 ## [1.1.2](https://github.com/cryptlex/web-api-client-js/compare/v1.1.1...v1.1.2) (2022-11-30)
 
 
