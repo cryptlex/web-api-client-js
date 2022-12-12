@@ -10,10 +10,12 @@ type AxiosRetryConfig = AxiosRequestConfig<any> & {
   lastRequestTime?: number;
 };
 
+/** AxiosError with AxiosRetryConfig */
 type AxiosErrorWithRetries = AxiosError & {
   config: AxiosRetryConfig;
 };
 
+/** Type alias for units. */
 type Milliseconds = number;
 
 /**
@@ -33,6 +35,11 @@ export class HttpClient {
   /** Axios instance */
   instance: AxiosInstance;
 
+  /**
+   * @private
+   * @internal
+   * @param {CryptlexWebApiClientOptions} options CryptlexWebApiClientOptions
+   */
   constructor(options: CryptlexWebApiClientOptions) {
     this.instance = axios.create({
       baseURL: options.baseUrl,
