@@ -48,7 +48,7 @@ export default class CryptlexWebApiClient {
    * Create multiple licenses
    * @param {LicenseCreateRequest} license License object to create
    * @param {number} count Number of licenses to create
-   * @returns {Promise<ApiResponse<LicenseResponse>[]>} Promise that resolves to an array of Web API responses.
+   * @returns {Promise<ApiResponse[]>} Promise that resolves to an array of Web API responses.
    */
   createLicenses(
     license: LicenseCreateRequest,

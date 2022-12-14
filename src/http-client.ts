@@ -15,20 +15,28 @@ type AxiosErrorWithRetries = AxiosError & {
   config: AxiosRetryConfig;
 };
 
-/** Type alias for units. */
+/**
+ * @internal
+ * Type alias for units. */
 type Milliseconds = number;
 
 /**
+ * @internal
+ * @ignore
  * Default time to stall program
  */
 const DEFAULT_SLEEP_TIME: Milliseconds = 30000;
 
 /**
+ * @internal
+ * @ignore
  * Maximum allowed retries.
  */
 const MAX_RETRIES = 3;
 
 /**
+ * @internal
+ * @ignore
  * The HttpClient class abstracts any customizations on the underlying client(Axios) from the CryptlexWebApiClient class.
  */
 export class HttpClient {
@@ -36,7 +44,6 @@ export class HttpClient {
   instance: AxiosInstance;
 
   /**
-   * @private
    * @internal
    * @param {CryptlexWebApiClientOptions} options CryptlexWebApiClientOptions
    */
@@ -53,7 +60,6 @@ export class HttpClient {
   }
 
   /**
-   * @private
    * @internal
    * Initializes interceptors for Axios client
    * @returns {void}
@@ -165,7 +171,7 @@ export class HttpClient {
 
 /**
  * @internal
- * @private
+ * @ignore
  *
  * Stalls the program.
  * @param {number} ms Time to stall in milliseconds

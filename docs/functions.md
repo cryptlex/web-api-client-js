@@ -4,6 +4,9 @@
 <dt><a href="#createLicense">createLicense(license)</a> ⇒ <code>Promise.&lt;ApiResponse.&lt;LicenseResponse&gt;&gt;</code></dt>
 <dd><p>Create a license.</p>
 </dd>
+<dt><a href="#createLicenses">createLicenses(license, count)</a> ⇒ <code>Promise.&lt;Array.&lt;ApiResponse&gt;&gt;</code></dt>
+<dd><p>Create multiple licenses</p>
+</dd>
 <dt><a href="#updateLicense">updateLicense(id, license)</a> ⇒ <code>Promise.&lt;ApiResponse.&lt;LicenseResponse&gt;&gt;</code></dt>
 <dd><p>Updates the specified license by setting the values of the existing license to the properties passed.
 Any properties not provided will be left unchanged.</p>
@@ -56,6 +59,20 @@ Create a license.
 | Param   | Type                              | Description              |
 | ------- | --------------------------------- | ------------------------ |
 | license | <code>LicenseCreateRequest</code> | License object to create |
+
+<a name="createLicenses"></a>
+
+## createLicenses(license, count) ⇒ <code>Promise.&lt;Array.&lt;ApiResponse&gt;&gt;</code>
+
+Create multiple licenses
+
+**Kind**: global function  
+**Returns**: <code>Promise.&lt;Array.&lt;ApiResponse&gt;&gt;</code> - Promise that resolves to an array of Web API responses.
+
+| Param   | Type                              | Description                  |
+| ------- | --------------------------------- | ---------------------------- |
+| license | <code>LicenseCreateRequest</code> | License object to create     |
+| count   | <code>number</code>               | Number of licenses to create |
 
 <a name="updateLicense"></a>
 
