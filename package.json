@@ -34,7 +34,7 @@
     "@commitlint/cli": "17.3.0",
     "@commitlint/config-conventional": "17.3.0",
     "@parcel/packager-ts": "2.8.0",
-    "@parcel/transformer-typescript-types": "2.8.0",
+    "@parcel/transformer-typescript-types": "2.8.3",
     "@typescript-eslint/eslint-plugin": "5.45.0",
     "@typescript-eslint/parser": "5.45.1",
     "eslint": "8.28.0",
