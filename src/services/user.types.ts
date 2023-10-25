@@ -65,7 +65,7 @@ export type UserUpdateRequest = Omit<UserCreateRequest, "password">;
 export type UserType = "admin" | "user";
 
 /** Supported query parameters for listing users  */
-export type UserListQueryParameters = {
+type _UserListQueryParameters = {
   /** Matches role that is equal to the specified value. */
   "role[eq]": string;
 
@@ -280,6 +280,7 @@ export type UserListQueryParameters = {
   /** Matches last seen date that is less than or equal to the specified value. */
   "lastSeenAt[lte]": string;
 };
+export type UserListQueryParameters = Partial<_UserListQueryParameters>;
 
 /** Request format for user password update */
 export interface UserPasswordUpdateRequest {
