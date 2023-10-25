@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/cryptlex/web-api-client-js/compare/v1.2.0...v1.2.1) (2023-10-25)
+
+
+### Bug Fixes
+
+* user query parameter types ([d9cb719](https://github.com/cryptlex/web-api-client-js/commit/d9cb7193c7cf323fc93bf4b9808d14a715461a5c))
+
 ## [1.2.0](https://github.com/cryptlex/web-api-client-js/compare/v1.1.2...v1.2.0) (2022-12-12)
 
 
